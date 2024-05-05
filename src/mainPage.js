@@ -6,6 +6,7 @@ logo.src = logoImg;
 function renderMain() {
   const content = document.getElementById("content");
   content.innerHTML = "";
+  content.style.justifyContent = "center";
   content.style.backgroundImage = `url(${Background})`;
   const mainContent = document.createElement("div");
   mainContent.id = "main-content";

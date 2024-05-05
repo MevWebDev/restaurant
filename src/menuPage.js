@@ -14,8 +14,15 @@ function renderMenu() {
     { name: "Lody", price: "12zł" },
     { name: "Sernik", price: "18zł" },
   ];
+  const menu = [mainDishes, drinks, desserts];
   const content = document.getElementById("content");
   content.innerHTML = "";
+  content.style.justifyContent = "center";
+  content.style.gap = "0rem";
+  const menuTitle = document.createElement("h1");
+  menuTitle.id = "menu-title";
+  menuTitle.textContent = "Menu";
+  content.append(menuTitle);
   const menuContent = document.createElement("div");
   menuContent.id = "main-content";
   menuContent.className = "menu-content";
@@ -28,28 +35,11 @@ function renderMenu() {
     sectionTitle.textContent = section;
     const sectionItems = document.createElement("div");
     sectionItems.className = "items";
-    if (i == 0) {
-      const items = mainDishes;
-      items.forEach((item, index) => {
-        const product = document.createElement("p");
-        product.textContent = `${index + 1}. ${item.name}:  ${item.price}`;
-        sectionItems.append(product);
-      });
-    } else if (i == 1) {
-      const items = drinks;
-      items.forEach((item, index) => {
-        const product = document.createElement("p");
-        product.textContent = `${index + 1}. ${item.name}:  ${item.price}`;
-        sectionItems.append(product);
-      });
-    } else {
-      const items = desserts;
-      items.forEach((item, index) => {
-        const product = document.createElement("p");
-        product.textContent = `${index + 1}. ${item.name}:  ${item.price}`;
-        sectionItems.append(product);
-      });
-    }
+    menu[i].forEach((item, index) => {
+      const product = document.createElement("p");
+      product.textContent = `${index + 1}. ${item.name}:  ${item.price}`;
+      sectionItems.append(product);
+    });
 
     menuSection.append(sectionTitle);
     menuSection.append(sectionItems);

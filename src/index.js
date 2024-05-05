@@ -1,7 +1,7 @@
 import "./style.scss";
 import { renderMain } from "./mainPage.js";
 import { renderMenu } from "./menuPage.js";
-import { renderAbout } from "./aboutPage.js";
+import { renderContact } from "./contactPage.js";
 import Background from "./img/background3.jpg";
 import logoImg from "./img/logo.png";
 const logo = document.getElementById("logo-img");
@@ -14,6 +14,6 @@ logo.src = logoImg;
   homeButton.addEventListener("click", renderMain);
 
   const aboutButton = document.getElementById("about-button");
-  aboutButton.addEventListener("click", renderAbout);
+  aboutButton.addEventListener("click", renderContact);
   renderMain();
 })();
