@@ -12,6 +12,7 @@ function renderMain() {
   mainContent.id = "main-content";
   const mainImg = new Image();
   mainImg.src = logoImg;
+  mainImg.style.maxWidth = "50%";
   const mainText = document.createElement("p");
   mainText.textContent = `BOGATE SMAKI I NIEPOWTARZALNE WNĘTRZA.
 
