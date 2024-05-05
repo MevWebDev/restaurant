@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
@@ -36,5 +37,6 @@ module.exports = {
       inject: "body",
       //   scriptLoading: "defer",
     }),
+    new FaviconsWebpackPlugin("./src/img/favicon.png"),
   ],
 };
